@@ -11,7 +11,7 @@ function convertCSVtoJSON(url = './customer-data.csv') {
     csv()
     .fromString(data)
     .on('end_parsed', (jsonArrObj)=> {
-      fs.writeFileSync(path.join(__dirname, fileName), JSON.stringify(jsonArrObj));
+      fs.writeFileSync(path.join(__dirname, fileName), JSON.stringify(jsonArrObj, null, 2));
     });
   });
 }
